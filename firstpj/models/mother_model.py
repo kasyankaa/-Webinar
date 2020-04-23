@@ -2,8 +2,9 @@ from abc import ABC, abstractmethod
 
 
 class AbstractParent(ABC):
-
-    def use_femenitives(self):
+    
+     @abstractmethod
+    def bring_up_question(self):
         raise NotImplementedError
 
     @abstractmethod
@@ -15,7 +16,7 @@ class Mum(AbstractParent):
 
     def __init__(self, age):
         self.age = age
-        print("mamas making")
+        print("mum creating")
 
     def do_work(self):
         print("i`m working")
@@ -27,19 +28,19 @@ class Mum(AbstractParent):
 class Dad(AbstractParent):
 
     def __init__(self):
-        print("papas making")
+        print("dad creating")
 
     def play_guitar(self):
-        print("father is plaing guitar")
+        print("dad is plaing guitar")
 
     def do_house_work(self):
-        print("sitting in the sofa and drinking beer")
+        print("sitting on the sofa and drinking beer")
 
 
 class Daughter(Mum, Dad):
 
-    def use_femenitives(self):
-        print("FEMINITIVES")
+    def bring_up_question(self):
+        print("May i go?")
 
     def hello_friend(self):
         print("hello")
@@ -57,7 +58,7 @@ class Friend:
 
 
 def greet_mother(mother: Mum):
-    print("Hello mother")
+    print("Hello mum")
     mother.do_work()
 
 
@@ -69,7 +70,7 @@ def greet_father(father: Dad):
 if __name__ == "__main__":
     daughter = Daughter()
     daughter.hello_friend()
-    daughter.use_femenitivs()
+    daughter.bring_up_question()
     daughter.do_house_work()
     # change parents
     for x in [daughter]:
