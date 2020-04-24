@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 
 class AbstractParent(ABC):
     
-     @abstractmethod
+
     def bring_up_question(self):
         raise NotImplementedError
 
